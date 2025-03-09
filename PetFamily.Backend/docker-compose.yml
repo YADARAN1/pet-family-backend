@@ -22,7 +22,7 @@
     environment:
       POSTGRES_DB: pet_family
       POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: galaxy
+      POSTGRES_PASSWORD: postgres
     volumes:
       - postgres-data:/var/lib/postgresql/data
     ports:
