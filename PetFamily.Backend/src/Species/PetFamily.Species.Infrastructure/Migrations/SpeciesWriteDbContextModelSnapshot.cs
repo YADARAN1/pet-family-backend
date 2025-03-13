@@ -32,7 +32,7 @@ namespace PetFamily.Species.Infrastructure.Migrations
 
                     b.Property<Guid>("SpeciesId")
                         .HasColumnType("uuid")
-                        .HasColumnName("species_fk_id");
+                        .HasColumnName("species_id");
 
                     b.Property<string>("Value")
                         .IsRequired()
@@ -43,7 +43,7 @@ namespace PetFamily.Species.Infrastructure.Migrations
                         .HasName("pk_breeds");
 
                     b.HasIndex("SpeciesId")
-                        .HasDatabaseName("ix_breeds_species_fk_id");
+                        .HasDatabaseName("ix_breeds_species_id");
 
                     b.ToTable("breeds", "species");
                 });
@@ -77,7 +77,7 @@ namespace PetFamily.Species.Infrastructure.Migrations
                         .HasForeignKey("SpeciesId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired()
-                        .HasConstraintName("fk_breeds_species_species_fk_id");
+                        .HasConstraintName("fk_breeds_species_species_id");
                 });
 
             modelBuilder.Entity("PetFamily.Species.Domain.Species", b =>

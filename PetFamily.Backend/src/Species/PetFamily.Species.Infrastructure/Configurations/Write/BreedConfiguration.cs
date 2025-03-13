@@ -10,6 +10,7 @@ public class BreedConfiguration : IEntityTypeConfiguration<Breed>
     public void Configure(EntityTypeBuilder<Breed> builder)
     {
         builder.ToTable("breeds");
+
         builder.HasKey(b => b.Id);
 
         builder.Property(b => b.Id)
@@ -23,8 +24,8 @@ public class BreedConfiguration : IEntityTypeConfiguration<Breed>
                 id => id.Id,
                 result => SpeciesId.Create(result)
             )
-            .HasColumnName("species_fk_id");
-        
+            .HasColumnName("species_id");
+
         builder.Property(b => b.Value)
             .HasColumnName("breed")
             .IsRequired();

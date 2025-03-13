@@ -13,7 +13,7 @@ using PetFamily.VolunteerManagement.Infrastructure;
 namespace PetFamily.VolunteerManagement.Infrastructure.Migrations
 {
     [DbContext(typeof(VolunteersWriteDbContext))]
-    [Migration("20250309130254_init")]
+    [Migration("20250309135237_init")]
     partial class init
     {
         /// <inheritdoc />

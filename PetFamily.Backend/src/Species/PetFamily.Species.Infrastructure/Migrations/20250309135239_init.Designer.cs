@@ -13,7 +13,7 @@ using PetFamily.Species.Infrastructure;
 namespace PetFamily.Species.Infrastructure.Migrations
 {
     [DbContext(typeof(SpeciesWriteDbContext))]
-    [Migration("20250309130256_init")]
+    [Migration("20250309135239_init")]
     partial class init
     {
         /// <inheritdoc />
@@ -35,7 +35,7 @@ namespace PetFamily.Species.Infrastructure.Migrations
 
                     b.Property<Guid>("SpeciesId")
                         .HasColumnType("uuid")
-                        .HasColumnName("species_fk_id");
+                        .HasColumnName("species_id");
 
                     b.Property<string>("Value")
                         .IsRequired()
@@ -46,7 +46,7 @@ namespace PetFamily.Species.Infrastructure.Migrations
                         .HasName("pk_breeds");
 
                     b.HasIndex("SpeciesId")
-                        .HasDatabaseName("ix_breeds_species_fk_id");
+                        .HasDatabaseName("ix_breeds_species_id");
 
                     b.ToTable("breeds", "species");
                 });
@@ -80,7 +80,7 @@ namespace PetFamily.Species.Infrastructure.Migrations
                         .HasForeignKey("SpeciesId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired()
-                        .HasConstraintName("fk_breeds_species_species_fk_id");
+                        .HasConstraintName("fk_breeds_species_species_id");
                 });
 
             modelBuilder.Entity("PetFamily.Species.Domain.Species", b =>

@@ -8,6 +8,8 @@ public class SpeciesConfiguration : IEntityTypeConfiguration<Domain.Species>
 {
     public void Configure(EntityTypeBuilder<Domain.Species> builder)
     {
+        builder.ToTable("species");
+        
         builder.HasKey(s => s.Id);
 
         builder.Property(s => s.Id)
